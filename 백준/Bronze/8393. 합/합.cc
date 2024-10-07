@@ -7,7 +7,7 @@ int main(void) {
 	int n, x=0;
 	cin >> n;
 	for(int i=1; i<=n; i++) {
-		x = x + i;
+		x += i;
 	}
 	cout << x;
 }
