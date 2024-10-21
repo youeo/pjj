@@ -15,16 +15,13 @@ int main() {
 		cin >> a >> score >> grade;
 
 		// 등급 변환
-		if (grade == "P") { continue; }
-		else if (grade == "F") { g_score = 0.0; }
-		else if (grade == "A+") { g_score = 4.5; }
-		else if (grade == "A0") { g_score = 4.0; }
-		else if (grade == "B+") { g_score = 3.5; }
-		else if (grade == "B0") { g_score = 3.0; }
-		else if (grade == "C+") { g_score = 2.5; }
-		else if (grade == "C0") { g_score = 2.0; }
-		else if (grade == "D+") { g_score = 1.5; }
-		else if (grade == "D0") { g_score = 1.0; }
+		if (grade[0] == 'P') { continue; }
+		else if (grade[0] == 'F') { g_score = 0.0; }
+		else if (grade[0] == 'A') { g_score = 4.0; }
+		else if (grade[0] == 'B') { g_score = 3.0; }
+		else if (grade[0] == 'C') { g_score = 2.0; }
+		else if (grade[0] == 'D') { g_score = 1.0; }
+		if (grade[1] == '+') { g_score += 0.5; }
 
 		// 학점과 과목평점 계산
 		g_sum += score;
