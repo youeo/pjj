@@ -22,14 +22,8 @@ int main() {
 			return 0;
 		}
 		else {
-			while (1) {
-				sum--;
-				mx--;
-				if (sum - mx > mx) {
-					cout << sum;
-					return 0;
-				}
-			}
+			cout << (sum - mx) + ((sum - mx) - 1);
+			return 0;
 		}
 	}
 }
