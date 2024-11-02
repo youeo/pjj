@@ -2,8 +2,8 @@
 using namespace std;
 
 //=====================================
-int n;
-int arr[1000];
+int n, in;
+vector<int> arr;
 //=====================================
 
 
@@ -12,12 +12,16 @@ int main() {
 
 	cin >> n;
 
+    // 배열 만들기
 	for (int i = 0; i < n; i++) {
-		cin >> arr[i];
+		cin >> in;
+        arr.push_back(in);
 	}
 
-	sort(arr, arr + n);
+    // 오름차순 정렬
+	sort(arr.begin(), arr.end());
 
+    // 결과 출력
 	for (int i = 0; i < n - 1; i++) {
 		cout << arr[i] << "\n";
 	}
