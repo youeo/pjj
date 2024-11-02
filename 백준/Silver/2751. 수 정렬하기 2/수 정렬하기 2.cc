@@ -3,7 +3,7 @@ using namespace std;
 
 //=====================================
 int n, in;
-vector<int> arr;
+int arr[1000000];
 //=====================================
 
 
@@ -14,12 +14,11 @@ int main() {
 
 	// 배열 만들기
 	for (int i = 0; i < n; i++) {
-		cin >> in;
-		arr.push_back(in);
+		cin >> arr[i];
 	}
 
 	// 오름차순 정렬
-	sort(arr.begin(), arr.end());
+	sort(arr, arr + n);
 
 	// 결과 출력
 	for (int i = 0; i < n - 1; i++) {
