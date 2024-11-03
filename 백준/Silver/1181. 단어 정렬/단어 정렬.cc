@@ -3,40 +3,35 @@ using namespace std;
 
 //=====================================
 int n;
-string in;
-map<string, int> arr;
-vector<pair<string, int>> vec;
 //=====================================
 
 // 비교 조건함수 (문자의 길이가 같으면 사전순으로 정렬)
-bool cmp(pair<string, int>& a, pair<string, int>& b) {
-	if (a.second == b.second)
-		return a.first < b.first;
-	return a.second < b.second;
+bool cmp(string& a, string& b) {
+	if (a.length() == b.length())
+		return a < b;
+	return a.length() < b.length();
 }
 
 int main() {
 	cin.tie(0)->ios::sync_with_stdio(0);
 
 	cin >> n;
+	vector<string> arr(n);
 
-	// 중복 없이 배열 생성
+	// 배열 생성
 	for (int i = 0; i < n; i++) {
-		cin >> in;
-		arr[in] = in.length();
-	}
-
-	// 정렬을 위해 이동
-	for (auto& e : arr) {
-		vec.push_back({ e.first, e.second });
+		cin >> arr[i];
 	}
 
 	// 정렬
-	sort(vec.begin(), vec.end(), cmp);
+	sort(arr.begin(), arr.end(), cmp);
+
+	// 중복 제거
+	arr.erase(unique(arr.begin(), arr.end()), arr.end());
 
 	// 결과 출력
-	for (auto& e : vec) {
-		cout << e.first << "\n";
+	for (string e : arr) {
+		cout << e << "\n";
 	}
 
 	return 0;
