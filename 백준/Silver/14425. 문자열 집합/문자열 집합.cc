@@ -14,18 +14,22 @@ int main() {
 
 	cin >> n >> m;
 
+	// 문자열 배열 생성
 	for (int i = 0; i < n; i++) {
 		cin >> have[i];
 	}
 
+	// 배열 정렬
 	sort(have, have + n);
 
+	// 이진탐색으로 포함 갯수 체크
 	for (int i = 0; i < m; i++) {
 		cin >> in;
 		if (binary_search(have, have + n, in))
 			count++;
 	}
 
+	//결과 출력
 	cout << count;
 	return 0;
 }
