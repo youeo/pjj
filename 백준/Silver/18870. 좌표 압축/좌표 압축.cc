@@ -23,7 +23,7 @@ int main() {
 	stable_sort(ori.begin(), ori.end());
 	ori.erase(unique(ori.begin(), ori.end()), ori.end());
 
-	// 좌표의 인덱스 추출 및 결과 출력
+	// 좌표의 인덱스 추출 및 결과 출력 (nlgn)
 	for (int& e : cpy) {
 		cout << lower_bound(ori.begin(), ori.end(), e) - ori.begin() << ' ';
 	}
