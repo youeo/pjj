@@ -6,38 +6,39 @@ int n, in;
 long long x[100001], xx[100001];
 //=====================================
 
+//최대공약수
 long long gcd(long long a, long long b) {
 	return b ? gcd(b, a % b) : a;
 }
 
 int main() {
 	cin.tie(0)->ios::sync_with_stdio(0);
-	long long min1 = 1000000000, temp;
+	long long min = 1000000000, temp;
 	int count = 0;
 
 	cin >> n;
 
+	// 입력값과 거리 배열 생성
 	cin >> in;
 	x[0] = in;
 	for (int i = 0; i < n - 1; i++) {
 		cin >> in;
 		x[i + 1] = in;
-		xx[i] = max(x[i + 1], x[i]) - min(x[i + 1], x[i]);
+		xx[i] = x[i + 1] - x[i];
 	}
 
-
+	// 균형 최소 거리 계산
 	temp = gcd(xx[0], xx[1]);
 	for (int i = 2; i < n; i++) {
-		if (min1 >= temp) {
-			min1 = temp;
+		if (min >= temp) {
+			min = temp;
 		}
 		temp = gcd(temp, xx[i]);
 	}
 
-	sort(x, x + n);
-
+	// 추가될 가로등 계산
 	int i = 0;
-	for (long long p = x[0]; p < x[n - 1]; p += min1) {
+	for (long long p = x[0]; p < x[n - 1]; p += min) {
 		if (p == x[i]) {
 			i++;
 			continue;
@@ -47,6 +48,7 @@ int main() {
 		}
 	}
 
+	// 결과 출력
 	cout << count;
 	return 0;
 }
