@@ -37,15 +37,8 @@ int main() {
 	}
 
 	// 추가될 가로등 계산
-	int i = 0;
-	for (long long p = x[0]; p < x[n - 1]; p += min) {
-		if (p == x[i]) {
-			i++;
-			continue;
-		}
-		else {
-			count++;
-		}
+	for (int i = 0; i < n - 1; i++) {
+		count += (x[i + 1] - x[i]) / min - 1;
 	}
 
 	// 결과 출력
