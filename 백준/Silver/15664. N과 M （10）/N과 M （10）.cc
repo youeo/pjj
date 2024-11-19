@@ -4,7 +4,6 @@ using namespace std;
 //=====================================
 int n, m, in;
 int arr[10];
-bool check[10];
 vector<int> num;
 //=====================================
 
@@ -19,12 +18,10 @@ void nandm(int k, int idx) {
 
 	int n_check = -1;
 	for (int i = idx; i < n; i++) {
-		if (!check[i] && n_check != num[i]) {
+		if (n_check != num[i]) {
 			arr[k] = num[i];
-			check[i] = true;
 			n_check = num[i];
 			nandm(k + 1, i + 1);
-			check[i] = false;
 		}
 	}
 }
