@@ -3,40 +3,27 @@ using namespace std;
 
 //=====================================
 int n, m, in;
-string s;
 int arr[10];
 bool check[10];
 vector<int> num;
-set<string> n_check;
 //=====================================
 
 // N과M 수열 재귀 함수(9)
 void nandm(int k) {
 	if (k == m) {
-		// 중복 조합 확인
-		for (int i = 0; i < m; i++) {
-			s += to_string(arr[i]);
-			s += " ";
-		}
-		if (empty(n_check) || n_check.find(s) == n_check.end()) {
-			n_check.insert(s);
-		}
-		else {
-			s.clear();
-			return;
-		}
-		s.clear();
-
 		for (int i = 0; i < m; i++)
 			cout << arr[i] << ' ';
 		cout << "\n";
 		return;
 	}
 
+	int n_check = -1;
+	// 이미 정렬된 숫자 배열을 사용하므로 바로 이전 값이랑만 다르면 됨
 	for (int i = 0; i < n; i++) {
-		if (!check[i]) {
+		if (!check[i] && n_check != num[i]) {
 			arr[k] = num[i];
 			check[i] = true;
+			n_check = num[i];
 			nandm(k + 1);
 			check[i] = false;
 		}
