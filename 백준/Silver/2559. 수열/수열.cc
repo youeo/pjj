@@ -3,7 +3,7 @@ using namespace std;
 
 //=====================================
 int n, m, t;
-int arr[100001], ck[100001];
+int arr[100001];
 //=====================================
 
 int main() {
@@ -17,22 +17,18 @@ int main() {
 	}
 
 	// 누적 합 계산
-	for (int i = m; i <= n; i++) {
-		ck[t] = arr[i];
-		for (int j = 1; j < m; j++) {
-			ck[t] += arr[i - j];
-		}
-		t++;
+	for (int i = 1; i <= n; i++) {
+		arr[i] += arr[i - 1];
 	}
 
 	// 부분합 중 최대값 구하기
-	int result = ck[0];
-	for (int i = 1; i < t; i++) {
-		result = max(result, ck[i]);
+	t = arr[m];
+	for (int i = m + 1; i <= n; i++) {
+		t = max(t, arr[i] - arr[i - m]);
 	}
 
 	// 결과 출력
-	cout << result;
+	cout << t;
 
 	return 0;
 }
