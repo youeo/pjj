@@ -2,7 +2,7 @@
 using namespace std;
 
 //=====================================
-int n, m, t, result = -10000000;
+int n, m, t;
 int arr[100001], ck[100001];
 //=====================================
 
@@ -25,8 +25,9 @@ int main() {
 		t++;
 	}
 
-	// 누적 합 중 최대값 구하기
-	for (int i = 0; i < t; i++) {
+	// 부분합 중 최대값 구하기
+	int result = ck[0];
+	for (int i = 1; i < t; i++) {
 		result = max(result, ck[i]);
 	}
 
