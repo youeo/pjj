@@ -5,7 +5,7 @@ using namespace std;
 int n, l, r, t;
 char a;
 string s;
-int alpa[27][2001];
+int alpa[27][1000000];
 //=====================================
 
 int main() {
