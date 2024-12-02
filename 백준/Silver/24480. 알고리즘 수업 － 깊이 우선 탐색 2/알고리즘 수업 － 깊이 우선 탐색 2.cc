@@ -7,10 +7,6 @@ int vis[100001];
 vector<int> arr[100001];
 //=====================================
 
-int cmp(int i, int j) {
-	return i > j;
-}
-
 int main() {
 	cin.tie(0)->ios::sync_with_stdio(0);
 	int j = 1;
