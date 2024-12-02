@@ -3,7 +3,7 @@ using namespace std;
 
 //=====================================
 int n, m, r, in_m, in_r;
-int vis[100001], ck[100001];
+int vis[100001];
 vector<int> arr[100001];
 //=====================================
 
@@ -36,20 +36,18 @@ int main() {
 
 	while (!s.empty()) {
 		int cur = s.top(); s.pop();
-		if (vis[cur] == 0) {
-			vis[cur] = 1;
-			ck[cur] = j++;
-		}
+		if (!vis[cur])
+			vis[cur] = j++;
 
 		for (int& e : arr[cur]) {
-			if (vis[e]) continue;
+			if (vis[e] != 0) continue;
 			s.push(e);
 		}
 	}
 
 	// 결과 출력
 	for (int i = 1; i <= n; i++) {
-		cout << ck[i] << "\n";
+		cout << vis[i] << "\n";
 	}
 
 	return 0;
