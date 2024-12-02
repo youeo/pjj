@@ -13,11 +13,11 @@ int main() {
 
 	cin >> n >> m >> r;
 
-	// 너비 우선 탐색 - queue 사용
-	queue<int> q;
+	// 너비 우선 탐색 - deque 사용
+	deque<int> q;
 	vis[r] = 1;
 	ck[r] = j;
-	q.push(r);
+	q.push_back(r);
 
 	// 양방향 간선 구현
 	for (int i = 0; i < m; i++) {
@@ -33,13 +33,13 @@ int main() {
 
 
 	while (!q.empty()) {
-		int cur = q.front(); q.pop();
+		int cur = q.front(); q.pop_front();
 		ck[cur] = j++;
 
 		for (int& e : arr[cur]) {
 			if (vis[e]) continue;
 			vis[e] = 1;
-			q.push(e);
+			q.push_back(e);
 		}
 	}
 
