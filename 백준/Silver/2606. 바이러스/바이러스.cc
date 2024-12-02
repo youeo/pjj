@@ -3,8 +3,8 @@ using namespace std;
 
 //=====================================
 int n, m, in_f, in_s;
-int vis[100001];
-vector<int> arr[100001];
+int vis[101];
+vector<int> arr[101];
 //=====================================
 
 int main() {
@@ -38,7 +38,6 @@ int main() {
 
 	// 결과 출력 (1번 컴퓨터 제외 나머지 감염 컴퓨터의 수)
 	cout << cnt - 1 << "\n";
-
 
 	return 0;
 }
