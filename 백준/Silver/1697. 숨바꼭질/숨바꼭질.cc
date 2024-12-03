@@ -4,7 +4,6 @@ using namespace std;
 //=====================================
 int n, k;
 int vis[100001];
-int arr[100001];
 //=====================================
 
 int bfs() {
@@ -14,7 +13,7 @@ int bfs() {
 	vis[n] = 1;
 	q.push(n);
 
-	while (!q.empty()) {
+	while (vis[k] == 0) {
 		int cur = q.front(); q.pop();
 
 		for (int nxt : {cur - 1, cur + 1, cur * 2}) {
