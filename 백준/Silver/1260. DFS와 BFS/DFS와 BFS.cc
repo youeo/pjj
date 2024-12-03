@@ -28,7 +28,7 @@ int dfs() {
 	}
 
 	return 0;
-}// 이건 방문 위치 바꿔야 할듯
+}
 
 int bfs() {
 
