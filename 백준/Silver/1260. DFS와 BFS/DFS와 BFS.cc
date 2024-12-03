@@ -53,7 +53,6 @@ int bfs() {
 
 int main() {
 	cin.tie(0)->ios::sync_with_stdio(0);
-	int cnt = 0;
 
 	cin >> n >> m >> r;
 
