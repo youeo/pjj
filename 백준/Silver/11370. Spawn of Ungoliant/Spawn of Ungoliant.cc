@@ -9,7 +9,7 @@ int dx[4] = { 1, 0, -1, 0 };
 int dy[4] = { 0, 1, 0, -1 };
 //=====================================
 
-int bfs(int row, int col) {
+void bfs(int row, int col) {
 
 	// 너비 우선 탐색 - queue 사용
 	queue<pair<int, int>> q;
@@ -28,8 +28,6 @@ int bfs(int row, int col) {
 			q.push({ nx, ny });
 		}
 	}
-
-	return 0;
 }
 
 int main() {
