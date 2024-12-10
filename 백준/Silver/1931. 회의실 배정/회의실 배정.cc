@@ -16,11 +16,11 @@ int main() {
 	cin.tie(0)->ios::sync_with_stdio(0);
 
 	cin >> n;
+	arr.resize(n);
 
 	// 배열 생성
 	for (int i = 0; i < n; i++) {
-		cin >> s_t >> e_t;
-		arr.push_back({ s_t, e_t });
+		cin >> arr[i].first >> arr[i].second;
 	}
 
 	// 회의 종료 시간이 빠른 순으로 정렬
