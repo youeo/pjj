@@ -2,7 +2,7 @@
 using namespace std;
 
 //=====================================
-int n, s_t, e_t, result = 1;
+int n, result = 1;
 vector<pair<int, int>> arr;
 //=====================================
 
