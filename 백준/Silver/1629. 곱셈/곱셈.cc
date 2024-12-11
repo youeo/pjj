@@ -7,16 +7,16 @@ ll a, b, c;
 //=====================================
 
 // 분할 곱셈 (재귀 사용)
-ll solve(int n) {
+ll solve(ll n) {
 
 	if (n == 1) return a;
 
-	int nn = n / 2;
+	ll nn = solve(n / 2);
 	// n이 홀수일때와 짝수일때로 구분
 	if (n % 2)
-		return (solve(nn) % c) * (solve(n - (nn)) % c);
+		return (nn * solve(n - (n / 2))) % c;
 	else
-		return (solve(nn) % c) * (solve(nn) % c);
+		return (nn * nn) % c;
 }
 
 int main() {
