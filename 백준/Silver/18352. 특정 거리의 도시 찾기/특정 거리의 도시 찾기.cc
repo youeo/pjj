@@ -11,19 +11,21 @@ vector<int> arr[300005];
 
 // 다익스트라 구현 함수
 void dij(int k) {
-	priority_queue<int, vector<int>, greater<int>> pq;
+	priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
 	d[k] = 0;
-	pq.push(k);
+	pq.push({ d[k], k });
 
 	while (!pq.empty()) {
-		int x = pq.top(); pq.pop();
+		auto [cost, x] = pq.top(); pq.pop();
+
+		if (d[x] != cost) continue;
 
 		for (auto nxt : arr[x]) {
-			if (d[x] != INF && d[nxt] <= d[x] + 1) continue;
+			if (d[nxt] <= d[x] + 1) continue;
 
 			d[nxt] = d[x] + 1;
-			pq.push(nxt);
+			pq.push({ d[nxt], nxt });
 		}
 	}
 }
