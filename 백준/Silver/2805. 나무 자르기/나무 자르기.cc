@@ -31,11 +31,11 @@ int main() {
 
 	ll st = 0, en = *max_element(arr.begin(), arr.end());
 
-	while (st < en) {
-		ll mid = (st + en + 1) / 2;
+	while (st + 1 < en) {
+		ll mid = (st + en) / 2;
 
 		if (cut(mid)) st = mid;
-		else en = mid - 1;
+		else en = mid;
 	}
 
 	// 결과 출력
