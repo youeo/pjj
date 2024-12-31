@@ -5,7 +5,6 @@ typedef long long ll;
 //=====================================
 int n, x;
 ll arr[100'000];
-stack<pair<ll, ll>> ans;
 //=====================================
 
 
@@ -25,6 +24,7 @@ int main() {
 
 	// 투 포인터
 	int st = 0, en = n - 1;
+	ll s1 = 0, s2 = 0;
 
 	// 각 조건에 따라 포인터 이동
 	while (st != en) {
@@ -32,7 +32,8 @@ int main() {
 
 		if (abs(sum) <= abs(min)) {
 			min = sum;
-			ans.push({ arr[st], arr[en] });
+			s1 = arr[st];
+			s2 = arr[en];
 		}
 
 		// 더한 값이 0보다 작으면 큰 값으로 이동해야 함
@@ -44,7 +45,7 @@ int main() {
 	}
 
 	// 결과 출력
-	cout << ans.top().first << ' ' << ans.top().second;
+	cout << s1 << ' ' << s2;
 
 	return 0;
 }
