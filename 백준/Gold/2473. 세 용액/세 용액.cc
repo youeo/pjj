@@ -5,7 +5,7 @@ typedef long long ll;
 //=====================================
 int n, s1, s2;
 ll mn, mnn;
-ll arr[100'000];
+ll arr[5000];
 ll ans[3];
 //=====================================
 
@@ -49,6 +49,7 @@ int main() {
 	sort(arr, arr + n);
 
 	// 각 숫자마다 투포인터 탐색 수행
+    // 세 용액이므로 적어도 3개가 있을때까지만 탐색
 	for (int i = 0; i < n - 2; i++) {
 		auto [idx1, idx2] = solve(i);
 
