@@ -48,7 +48,7 @@ int main() {
 		mx += arr[i];
 	}
 
-	// 정렬 필수
+	// 블루레이가 순서대로 들어가야 하므로 정렬하면 안됨...
 	//sort(arr, arr + n);
 
 	mn = *max_element(arr, arr + n);
